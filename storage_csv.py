@@ -1,7 +1,5 @@
-# storage_csv.py
-
 import csv
-from istorage import IStorage
+from isstorage import IStorage
 
 class StorageCsv(IStorage):
     """
