@@ -9,4 +9,4 @@ if __name__ == "__main__":
     movie_app = MovieApp(storage)
 
     # Run the app
-    movie_app.run()
+    movie_app.run()1
