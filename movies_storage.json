@@ -1,0 +1,94 @@
+{
+    "Titanic": {
+        "rating": 9.0,
+        "year": 1997
+    },
+    "Inception": {
+        "rating": 8.8,
+        "year": 2010
+    },
+    "The Matrix": {
+        "rating": 8.7,
+        "year": 1999
+    },
+    "The Godfather": {
+        "rating": 9.2,
+        "year": 1972
+    },
+    "The Shawshank Redemption": {
+        "rating": 9.3,
+        "year": 1994
+    },
+    "Pulp Fiction": {
+        "rating": 8.9,
+        "year": 1994
+    },
+    "The Dark Knight": {
+        "rating": 9.0,
+        "year": 2008
+    },
+    "Forrest Gump": {
+        "rating": 8.8,
+        "year": 1994
+    },
+    "Fight Club": {
+        "rating": 8.8,
+        "year": 1999
+    },
+    "Interstellar": {
+        "rating": 8.6,
+        "year": 2014
+    },
+    "Gladiator": {
+        "rating": 8.5,
+        "year": 2000
+    },
+    "The Prestige": {
+        "rating": 8.5,
+        "year": 2006
+    },
+    "The Lion King": {
+        "rating": 8.5,
+        "year": 1994
+    },
+    "Parasite": {
+        "rating": 8.6,
+        "year": 2019
+    },
+    "Avengers: Endgame": {
+        "rating": 8.4,
+        "year": 2019
+    },
+    "Joker": {
+        "rating": 8.5,
+        "year": 2019
+    },
+    "The Silence of the Lambs": {
+        "rating": 8.6,
+        "year": 1991
+    },
+    "Se7en": {
+        "rating": 8.6,
+        "year": 1995
+    },
+    "Saving Private Ryan": {
+        "rating": 8.6,
+        "year": 1998
+    },
+    "The Green Mile": {
+        "rating": 8.6,
+        "year": 1999
+    },
+    "Braveheart": {
+        "rating": 8.3,
+        "year": 1995
+    },
+    "test2": {
+        "year": 2000,
+        "rating": 6.0
+    },
+    "test3": {
+        "year": 2000,
+        "rating": 3.0
+    }
+}
