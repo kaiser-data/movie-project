@@ -1,3 +1,5 @@
+# storage_csv.py
+
 import csv
 from istorage import IStorage
 
@@ -15,18 +17,20 @@ class StorageCsv(IStorage):
 
     def list_movies(self):
         """
-        Loads and returns the movies from the CSV file using UTF-8 encoding.
-        :return: Dictionary of movies.
+        Loads and returns the movies from the CSV file as a dictionary.
+        Returns:
+            dict: A dictionary of dictionaries containing movie information.
+                  Example: {"Titanic": {"rating": 9.2, "year": 1997, "poster": "..."}}
         """
         movies = {}
         try:
-            with open(self.file_path, 'r', encoding='utf-8', newline='') as csvfile:
+            with open(self.file_path, mode='r', encoding='utf-8', newline='') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     title = row['title']
                     year = int(row['year'])
                     rating = float(row['rating'])
-                    poster = row['poster']
+                    poster = row.get('poster', '')  # Optional field for poster URL
                     movies[title] = {
                         "rating": rating,
                         "year": year,
@@ -36,13 +40,13 @@ class StorageCsv(IStorage):
             return {}
         return movies
 
-    def add_movie(self, title, year, rating, poster):
+    def add_movie(self, title, year, rating, poster=""):
         """
-        Adds a new movie to the CSV file with UTF-8 encoding.
+        Adds a new movie to the CSV file.
         :param title: Title of the movie.
         :param year: Year the movie was released.
         :param rating: Rating of the movie.
-        :param poster: URL of the movie's poster.
+        :param poster: (Optional) URL of the movie's poster.
         """
         movies = self.list_movies()
         if title not in movies:
@@ -54,7 +58,7 @@ class StorageCsv(IStorage):
 
             # Write the updated data back to the CSV file
             fieldnames = ['title', 'year', 'rating', 'poster']
-            with open(self.file_path, 'w', encoding='utf-8', newline='') as csvfile:
+            with open(self.file_path, mode='w', encoding='utf-8', newline='') as csvfile:
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 for movie_title, movie_data in movies.items():
@@ -67,7 +71,7 @@ class StorageCsv(IStorage):
 
     def delete_movie(self, title):
         """
-        Deletes a movie from the CSV file with UTF-8 encoding.
+        Deletes a movie from the CSV file.
         :param title: Title of the movie to delete.
         """
         movies = self.list_movies()
@@ -76,7 +80,7 @@ class StorageCsv(IStorage):
 
             # Write the updated data back to the CSV file
             fieldnames = ['title', 'year', 'rating', 'poster']
-            with open(self.file_path, 'w', encoding='utf-8', newline='') as csvfile:
+            with open(self.file_path, mode='w', encoding='utf-8', newline='') as csvfile:
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 for movie_title, movie_data in movies.items():
@@ -89,7 +93,7 @@ class StorageCsv(IStorage):
 
     def update_movie(self, title, rating):
         """
-        Updates the rating of a movie in the CSV file with UTF-8 encoding.
+        Updates the rating of a movie in the CSV file.
         :param title: Title of the movie to update.
         :param rating: New rating for the movie.
         """
@@ -99,7 +103,7 @@ class StorageCsv(IStorage):
 
             # Write the updated data back to the CSV file
             fieldnames = ['title', 'year', 'rating', 'poster']
-            with open(self.file_path, 'w', encoding='utf-8', newline='') as csvfile:
+            with open(self.file_path, mode='w', encoding='utf-8', newline='') as csvfile:
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 for movie_title, movie_data in movies.items():

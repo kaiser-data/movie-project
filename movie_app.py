@@ -2,8 +2,10 @@
 
 from istorage import IStorage
 import random
-import os
 from termcolor import cprint
+import re
+import matplotlib.pyplot as plt
+import numpy as np
 
 class MovieApp:
     def __init__(self, storage: IStorage):
@@ -194,8 +196,7 @@ class MovieApp:
         """
         Creates a histogram of movie ratings and saves it as a PNG file.
         """
-        import matplotlib.pyplot as plt
-        import numpy as np
+
 
         movies = self._storage.list_movies()
         if not movies:
